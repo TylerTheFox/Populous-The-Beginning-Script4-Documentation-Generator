@@ -36,3 +36,437 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--dark-bg);
+  color: var(--text-primary);
+}
+
+.MuiAccordion-root {
+  background-color: var(--paper-bg) !important;
+  border: 1px solid var(--border-color);
+}
+
+/* Container styles */
+.app-container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  height: 100vh;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header-container {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-title {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.generation-time {
+  color: var(--text-secondary) !important;
+  margin: 0;
+}
+
+.back-button {
+  /* Button styles */
+}
+
+/* Search field */
+.search-field {
+  margin-bottom: 1.5rem !important;  /* Increased from default */
+  width: 100%;
+  position: relative;
+  z-index: 2;  /* Higher z-index to stay above resizer */
+}
+
+/* Grid layout */
+.content-grid {
+  flex-grow: 1;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  margin-top: 0.5rem;  /* Add a small top margin */
+}
+
+/* Sidebar */
+.sidebar-paper {
+  height: calc(100vh - 290px);  /* Adjust for header, search, and padding */
+  overflow-y: auto;
+  position: relative;
+  padding-bottom: 8px;  /* Add padding at bottom */
+  border-radius: 4px;
+}
+
+.module-list-item {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-left: 4px solid transparent; /* Add transparent border for consistent spacing */
+}
+
+.module-list-item:hover {
+  background-color: var(--hover-bg);
+}
+
+.module-list-item.selected {
+  background-color: var(--selected-bg);
+  border-left: 4px solid var(--primary-color);
+}
+
+/* Content area */
+.content-paper {
+  height: calc(100vh - 250px);
+  overflow: auto;
+  padding: 1.5rem;
+}
+
+.module-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Markdown styles */
+.markdown-content img {
+  max-width: 100%;
+}
+
+.markdown-content pre {
+  background-color: var(--code-bg);
+  border-radius: 4px;
+  margin: 16px 0;
+  color: var(--text-primary);
+}
+
+.markdown-content code {
+  background-color: var(--code-bg);
+  padding: 2px 4px;
+  border-radius: 4px;
+  color: var(--text-primary);
+}
+
+/* Component sections */
+.section-container {
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  margin-bottom: 0.5rem;
+}
+
+.section-paper {
+  padding: 1rem;
+  background-color: var(--darker-bg) !important;
+  border: 1px solid var(--border-color);
+}
+
+/* Symbol styles */
+.clickable-symbol {
+  cursor: pointer;
+  border-bottom: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.clickable-symbol:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+/* Function styles */
+.function-container {
+  margin-bottom: 1.5rem;
+}
+
+.function-signature {
+  font-weight: bold;
+}
+
+.function-description {
+  color: var(--text-secondary) !important;
+  margin-bottom: 0.5rem;
+}
+
+/* Structure and Class styles */
+.type-container {
+  margin-bottom: 1.5rem;
+}
+
+.type-name {
+  font-weight: bold;
+}
+
+.type-description {
+  color: var(--text-secondary) !important;
+  margin-bottom: 0.5rem;
+}
+
+.members-list {
+  margin-left: 1rem;
+}
+
+/* Enum styles */
+.enum-container {
+  margin-bottom: 1.5rem;
+}
+
+.enum-values {
+  margin-left: 1rem;
+}
+
+/* Resizer styles */
+.resizer-handle {
+  position: absolute;
+  right: -5px;
+  top: 0;
+  height: calc(100vh - 284px);  /* Match sidebar height */
+  width: 10px;
+  cursor: col-resize;
+  background-color: var(--border-color);
+  z-index: 1;  /* Lower z-index so it doesn't overlap with search */
+  margin-top: 24px; /* Add margin to avoid overlapping with search field */
+  touch-action: none;
+  will-change: transform;
+}
+
+/* Add these new styles */
+
+/* Module Row styles */
+.module-row {
+  padding: 8px;
+}
+
+.module-accordion {
+  width: 100%;
+}
+
+.accordion-summary {
+  min-height: 56px;
+}
+
+.accordion-summary .MuiAccordionSummary-content {
+  margin: 12px 0;
+}
+
+.accordion-title {
+  font-weight: 500;
+}
+
+.accordion-details {
+  padding: 16px;
+}
+
+/* Function section styles */
+.function-title {
+  font-weight: bold;
+}
+
+.function-text {
+  color: var(--text-secondary) !important;
+  margin-bottom: 8px;
+}
+
+.function-returns {
+  margin-left: 16px;
+  margin-top: 8px;
+}
+
+/* Class section styles */
+.class-functions {
+  margin-left: 16px;
+  margin-top: 8px;
+}
+
+.class-function-item {
+  margin-left: 8px;
+  margin-bottom: 8px;
+}
+
+.class-function-name {
+  font-weight: 500;
+}
+
+.class-function-description {
+  margin-left: 16px;
+  color: var(--text-secondary) !important;
+}
+
+.class-function-name .clickable-symbol {
+  display: inline-block;
+  cursor: pointer;
+  color: var(--primary-color);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 2px;
+}
+
+.class-function-name .clickable-symbol:hover {
+  text-decoration-style: solid;
+}
+
+/* Structure section styles */
+.structure-members {
+  margin-left: 16px;
+}
+
+/* Grid layout adjustments */
+.sidebar-grid-item {
+  height: calc(100vh - 290px);
+  width: inherit;
+  will-change: width;
+  transition: none;
+  position: relative;
+  will-change: transform, width;
+  transform: translateZ(0);
+}
+
+/* Highlight animation */
+.highlight-animation {
+  animation: highlightFade 2s ease;
+}
+
+@keyframes highlightFade {
+  0% { background-color: var(--selected-bg); }
+  100% { background-color: transparent; }
+}
+
+/* Dark theme colors */
+:root {
+  --dark-bg: #1e1e1e;
+  --darker-bg: #141414;
+  --paper-bg: #252526;
+  --hover-bg: rgba(255, 255, 255, 0.05);
+  --selected-bg: rgba(30, 144, 255, 0.15);
+  --border-color: #404040;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --primary-color: #0078d4;
+  --code-bg: #2d2d2d;
+}
+
+/* Paper components */
+.MuiPaper-root {
+  background-color: var(--paper-bg) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Typography */
+.MuiTypography-root {
+  color: var(--text-primary);
+}
+
+/* Search field */
+.MuiTextField-root {
+  background-color: var(--paper-bg);
+}
+
+.MuiInputBase-root {
+  color: var(--text-primary) !important;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border-color: var(--border-color) !important;
+}
+
+/* List items */
+.MuiListItemText-secondary {
+  color: var(--text-secondary) !important;
+}
+
+/* Links and clickable elements */
+
+/* Function descriptions */
+
+/* Code blocks */
+
+/* Override Material-UI specific styles */
+.MuiAccordionSummary-root {
+  background-color: var(--paper-bg) !important;
+}
+
+.MuiAccordionDetails-root {
+  background-color: var(--darker-bg) !important;
+}
+
+/* Button styles */
+.MuiButton-outlined {
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.MuiButton-outlined:hover {
+  background-color: var(--hover-bg) !important;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--darker-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Style the search input text and label */
+.MuiInputBase-input {
+  color: var(--text-primary) !important;
+}
+
+.MuiInputLabel-root {
+  color: var(--text-secondary) !important;
+}
+
+.MuiInputLabel-root.Mui-focused {
+  color: var(--primary-color) !important;
+}
+
+/* Style the search field background and border */
+.MuiOutlinedInput-root {
+  background-color: var(--paper-bg);
+}
+
+.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: var(--border-color) !important;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--primary-color) !important;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  height: 64px;
+  width: 64px;
+  object-fit: contain;
+  margin-right: 0.5rem;
+}
+
+.title-text {
+  display: flex;
+  flex-direction: column;
+}

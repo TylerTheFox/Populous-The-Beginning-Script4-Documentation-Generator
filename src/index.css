@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.react-resizable {
+  position: relative;
+}
+
+.react-resizable-handle {
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  right: -5px;
+  top: 0;
+  cursor: col-resize;
+  z-index: 1000;
+}
+
+.react-resizable-handle:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
